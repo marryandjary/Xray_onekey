@@ -232,7 +232,7 @@ function basic_optimization() {
 }
 
 function domain_check() {
-  read -rp "请输入你的域名信息(eg: www.wulabing.com):" domain
+  read -rp "marryandjary.tk(eg: www.wulabing.com):" domain
   domain_ip=$(curl -sm8 ipget.net/?ip="${domain}")
   print_ok "正在获取 IP 地址信息，请耐心等待"
   wgcfv4_status=$(curl -s4m8 https://www.cloudflare.com/cdn-cgi/trace -k | grep warp | cut -d= -f2)
@@ -353,7 +353,7 @@ function configure_nginx() {
 }
 
 function modify_port() {
-  read -rp "请输入端口号(默认：443)：" PORT
+  read -rp "8867(默认：443)：" PORT
   [ -z "$PORT" ] && PORT="443"
   if [[ $PORT -le 0 ]] || [[ $PORT -gt 65535 ]]; then
     print_error "请输入 0-65535 之间的值"
